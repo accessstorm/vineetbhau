@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .post-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light grey background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        .post-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+        .post-title-tag {
+            font-size: 18px;
+            color: #555;
+        }
+        .post-author {
+            font-size: 16px;
+            color: #777;
+        }
+        .post-body {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .post-summary {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e9ecef; /* Lighter grey for summary background */
+            border-left: 4px solid #333; /* Dark grey border */
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post-container">
+            <!-- Title -->
+            <h1 class="post-title">{{ post.title }}</h1>
+
+            <!-- Title Tag (if needed) -->
+            {% if post.title_tag %}
+            <p class="post-title-tag">{{ post.title_tag }}</p>
+            {% endif %}
+
+            <!-- Author -->
+            <p class="post-author">By {{ post.author }}</p>
+
+            <!-- Post Body -->
+            <div class="post-body">
+                {{ post.body|linebreaks }}
+            </div>
+
+            <!-- Summary -->
+            {% if post.summary %}
+            <div class="post-summary">
+                <strong>Summary:</strong> {{ post.summary }}
+            </div>
+            {% endif %}
+            
+        </div>
+    </div>
+</body>
+</html>

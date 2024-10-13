@@ -1,0 +1,67 @@
+
+<title> Contribute </title>
+<style>
+    form {
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f5f5f5; /* Light grey background */
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    }
+
+    label {
+        font-weight: bold;
+        color: #333; /* Dark grey text for labels */
+        margin-bottom: 8px;
+        display: block;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc; /* Light grey borders */
+        border-radius: 4px;
+        font-size: 16px;
+        color: #333; /* Dark grey text for input */
+        background-color: #fff; /* White background for inputs */
+    }
+
+    input:focus, textarea:focus, select:focus {
+        border-color: #555; /* Darker grey on focus */
+        outline: none;
+        box-shadow: 0 0 3px rgba(0, 0, 0, 0.1); /* Subtle focus shadow */
+    }
+
+    .btn {
+        background-color: #333; /* Dark grey button */
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 4px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #555; /* Slightly lighter grey on hover */
+    }
+
+    .d-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+</style>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="d-grid">
+        {% block button %}
+            <button type="submit" class="btn btn-lg">Post</button>
+        {% endblock %}
+    </div>
+</form>
