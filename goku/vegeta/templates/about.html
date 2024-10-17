@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Student Result Management</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #272626;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h1, h2 {
+    color: white;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #272626;
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.heading{
+    color: #272626;
+    font-size: 30px;
+    padding: 5px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.detail{
+    font-size: 20px;
+}
+ 
+ </style>
+</head>
+<body>
+    <header>
+        <h1>About Our Student Result Management System</h1>
+        <nav>
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="https://forms.gle/pqpNE3CatqhYUR4j7">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2 class="heading">Our Mission</h2>
+            <p>
+                Our mission is to streamline the management of student results, providing educators and administrators with an efficient, user-friendly platform to track and analyze student performance.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="heading">What We Do</h2>
+            <p>
+                We offer a comprehensive student result management system that allows schools and institutions to easily input, manage, and analyze student grades and progress. Our platform helps reduce administrative burdens and improves communication between educators and students.
+            </p>
+        </section>
+
+        <section>
+            <h2 class="heading">Our Values</h2>
+            <ul class="detail">
+                <li ><strong>Efficiency:</strong> We believe in optimizing processes for better outcomes.</li>
+                <li><strong>Integrity:</strong> We ensure that data management is secure and trustworthy.</li>
+                <li><strong>Innovation:</strong> We continually strive to improve our services through technology.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="heading">Our Team</h2>
+            <p>
+                Our dedicated team consists of education professionals and tech experts committed to providing the best solutions for student result management. We work closely with our users to ensure our platform meets their needs effectively.
+            </p>
+        </section>
+        <br/>
+        <br/>
+        <br/>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Academe, Inc. All rights reserved.</p>
+    </footer>
+</body>
+</html>

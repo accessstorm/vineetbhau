@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Portal Login</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to right, #272626 50%, #f5f7fa 50%);
+          }
+          .container {
+            display: flex;
+            width: 90%;
+            height: 90%;
+            padding: 1.25rem;
+            box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.1); /* 10px 30px */
+            border-radius: 0.625rem; /* 10px */
+            overflow: hidden;
+            flex-direction: row;
+          }
+          .message,
+          .message1 {
+            display: none;
+          }
+          .left,
+          .right {
+            padding: 2.5rem; /* 40px */
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+          }
+          .left {
+            background-color: #272626;
+            color: #f5f7fa;
+          }
+          .left h2 {
+            font-size: 2rem; /* 32px */
+            margin-bottom: 0.625rem; /* 10px */
+          }
+          .left p {
+            margin-bottom: 1.875rem; /* 30px */
+            /* color: #272626; */
+          }
+          .left input {
+            padding: 0.625rem; /* 10px */
+            margin-bottom: 1.25rem; /* 20px */
+            background: none;
+            color: #f5f7fa;
+            border: none;
+            border-bottom: 0.0625rem solid #595858; /* 1px */
+            font-size: 1rem; /* 16px */
+          }
+          .pass {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 0.0625rem solid #595858; /* 1px */
+            margin-bottom: 1.25rem;
+          }
+          .pass input {
+            width: 100%;
+            border: 0 !important;
+            margin: 0 !important;
+          }
+          .pass button {
+            display: flex;
+            align-items: center;
+            border: none;
+            background: none;
+          }
+          .pass path {
+            fill: #595858;
+          }
+          .pass input:focus ~ button path {
+            fill: #f5f7fa; /* 1px */
+          }
+          .pass:focus-within {
+            border-bottom-color: #f5f7fa;
+          }
+          .left input:focus {
+            outline: none;
+            border-bottom: 0.0625rem solid #f5f7fa; /* 1px */
+          }
+          .left .forgot-password {
+            color: #f5f7fa;
+            font-size: 0.875rem; /* 14px */
+            cursor: pointer;
+          }
+          .left .or-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 1.25rem 0;
+          }
+          .left .or-divider::before,
+          .left .or-divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 0.0625rem solid #595858; /* 1px */
+          }
+          .left .or-divider:not(:empty)::before {
+            margin-right: 0.25rem;
+          }
+          .left .or-divider:not(:empty)::after {
+            margin-left: 0.25rem;
+          }
+          .left .login-btn {
+            background-color: #f5f7fa;
+            color: #272626;
+            padding: 0.625rem; /* 10px */
+            border: none;
+            margin: 1rem 0.25rem;
+            border-radius: 0.3125rem; /* 5px */
+            cursor: pointer;
+            font-size: 1.2rem; /* 16px */
+          }
+          .left .social-login {
+            display: flex;
+            flex-direction: column;
+            gap: 0.625rem;
+          }
+          .left .social-login button {
+            display: flex;
+            column-gap: 0.75rem;
+            align-items: center;
+            justify-content: center;
+            background-color: #333;
+            color: white;
+            padding: 0.625rem; /* 10px */
+            border: none;
+            margin: 0.25rem;
+            border-radius: 0.3125rem; /* 5px */
+            cursor: pointer;
+            font-size: 1rem; /* 14px */
+          }
+          
+          .left .signup {
+            margin-top: 1.25rem; /* 20px */
+            color: #f5f7fa;
+            font-size: 0.875rem; /* 14px */
+            text-align: center;
+          }
+          .left .signup-btn {
+            background-color: #333;
+            color: white;
+            padding: 0.625rem; /* 10px */
+            border: none;
+            border-radius: 0.3125rem; /* 5px */
+            cursor: pointer;
+            font-size: 0.875rem; /* 14px */
+            display: block;
+            margin: 0.625rem auto 0; /* 10px auto 0 */
+          }
+          .right {
+            background-color: #f5f7fa;
+            color: #272626;
+            align-items: center;
+          }
+          .right h1 {
+            font-size: 2.25rem; /* 36px */
+            margin-bottom: 0.625rem; /* 10px */
+            text-align: center;
+          }
+          .right p {
+            font-size: 1rem; /* 16px */
+            margin-bottom: 1.875rem; /* 30px */
+            text-align: center;
+          }
+          .right img {
+            width: 18.75rem; /* 300px */
+            height: auto;
+          }
+          @media (max-width: 768px) {
+            body {
+              background: #272626;
+            }
+            .container {
+              flex-direction: column;
+              height: auto;
+              background-color: #272626;
+              padding: 0;
+              overflow: visible;
+              box-shadow: none;
+            }
+            .message {
+              display: block;
+              font-family: "IBM Plex Serif", serif;
+              font-style: italic;
+              font-size: 2.5rem;
+            }
+            .left {
+              width: 100%;
+              height: 100%;
+              padding: 0rem;
+              color: white;
+            }
+            .right {
+              display: none;
+            }
+          }
+        </style>
+</head>
+<body>
+    <section class="container">
+        <div class="left">
+            <span class="message">Welcome to <br />student portal</span>
+            <h2>Login</h2>
+            <p>Enter your account details</p>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <input placeholder="Username" type="text" name="username" required />
+                <div class="pass">
+                    <input placeholder="Password" type="password" id="password" name="password" required />
+                    <button type="button" onclick="togglePasswordVisibility()">
+                        <svg class="show" width="1.25rem" height="1.25rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- SVG for show password -->
+                        </svg>
+                        <svg class="hide" width="1.25rem" height="1.25rem" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                            <!-- SVG for hide password -->
+                        </svg>
+                    </button>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+            
+            <div class="signup">
+                Don't have an account?
+                <button class="signup-btn" onclick="location.href='{% url 'register' %}'">Sign up</button>
+            </div>
+        </div>
+        <div class="right">
+            <h1>Welcome to <br />student portal</h1>
+            <p>Login to access your account</p>
+            <img alt="Illustration of students with a laptop and documents" height="300" src="https://storage.googleapis.com/a1aa/image/p7JbV55Dst6RD1Yu7EmTIjSNfMvNJMEaS1djrHs98aPp2rxJA.jpg" width="300" />
+        </div>
+    </section>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById("password");
+            const showSvg = document.querySelector("svg.show");
+            const hideSvg = document.querySelector("svg.hide");
+            const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+            passwordInput.setAttribute("type", type);
+            passwordInput.focus();
+            if (showSvg.style.display === "none") {
+                showSvg.style.display = "block";
+                hideSvg.style.display = "none";
+            } else {
+                showSvg.style.display = "none";
+                hideSvg.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

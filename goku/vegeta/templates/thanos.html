@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .post-container {
+            max-width: 800px;
+            padding: 20px;
+            background-color: #f8f9fa; /* Light grey background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+        }
+        .post-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+        }
+        .post-title-tag {
+            font-size: 18px;
+            color: #555;
+        }
+        .post-author {
+            font-size: 16px;
+            color: #777;
+        }
+        .post-body {
+            margin-top: 20px;
+            font-size: 18px;
+            line-height: 1.6;
+            color: #444;
+        }
+        .post-summary {
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #e9ecef; /* Lighter grey for summary background */
+            border-left: 4px solid #333; /* Dark grey border */
+            font-style: italic;
+            color: #555;
+        }
+        /* Add some space at the top */
+        .container {
+            margin-top: 200px; /* Adjust this value to push content down */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="post-container mx-auto">
+            <!-- Title -->
+            <h1 class="post-title">{{ post.Subject }}</h1>
+
+            <!-- Author -->
+            <p class="post-author">User: {{ post.author }}</p>
+
+            <!-- Post Body -->
+            <div class="post-body">
+                Marks Obtained: {{ post.Marks }}
+                <br/>
+                <br/>
+                {{ post.Semester }}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
